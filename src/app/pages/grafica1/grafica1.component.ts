@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ChartData } from 'chart.js';
+
+
 
 
 @Component({
@@ -8,7 +11,11 @@ import { Component } from '@angular/core';
   ]
 })
 export class Grafica1Component  {
+  
 
+
+  public labels1: string[] = ["Gatitos", "Perritos", "ratoncitos"];
+  public data1 = [350,452,100]
 
 
 }
