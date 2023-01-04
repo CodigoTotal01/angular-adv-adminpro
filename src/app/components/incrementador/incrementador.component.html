@@ -1,0 +1,26 @@
+<!-- input / buttons  -->
+<div class="input-group">
+    <!-- buttons  -->
+    <span class="input-group-btn">
+        <!-- clases de ng desde l input  -->
+        <button  [ngClass]="btnClass" type="button" (click)="cambiarValor(-5)">
+            <i class="fa fa-minus"></i>
+        </button>
+    </span>
+    <!-- obtendra el valor del input y lo mostrara  -->
+    <input 
+        type="number" 
+        min="0" 
+        max="100" 
+        [ngClass]="{'is-invalid': progreso > 100 || progreso < 0}"
+        class="form-control" 
+        placeholder="Product name"
+        (ngModelChange)="onChange($event)"
+        [(ngModel)]="progreso">
+    <!-- buttons  -->
+    <span class="input-group-btn">
+        <button  [ngClass]="btnClass" type="button" (click)="cambiarValor(5)">
+            <i class="fa fa-plus"></i>
+        </button>
+    </span>
+</div>
