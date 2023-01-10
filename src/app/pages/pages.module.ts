@@ -17,6 +17,7 @@ import {ProgressComponent} from "./progress/progress.component";
 import {Grafica1Component} from "./grafica1/grafica1.component";
 import {PagesComponent} from "./pages.component";
 import {SharedModule} from "../shared/shared.module";
+import { AcountSettingsComponent } from './acount-settings/acount-settings.component';
 
 
 
@@ -31,6 +32,7 @@ import {SharedModule} from "../shared/shared.module";
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
+    AcountSettingsComponent,
   ],
   imports: [
     //angular
@@ -48,6 +50,7 @@ import {SharedModule} from "../shared/shared.module";
     ProgressComponent,
     Grafica1Component,
     PagesComponent,
+    AcountSettingsComponent,
   ]
 })
 export class PagesModule { }

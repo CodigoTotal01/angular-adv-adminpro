@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
+//importar una funcion desde su ruta para usarlo
+import {customInitFunctions} from   '../../../src/assets/js/custom.js'
+//definir funciones globales par que no marque como error 
+
+
+
+
 
 @Component({
   selector: 'app-pages',
@@ -8,9 +16,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor(private settingsService: SettingsService) { }
 
   ngOnInit(): void {
+      //inicializar todas las librerias, pero al estar algo de manera global tenemos que decirle que confie en nosotros que la use ahroa con funciones :D 
+      customInitFunctions();
+ 
   }
+
+
 
 }
