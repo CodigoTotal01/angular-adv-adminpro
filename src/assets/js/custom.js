@@ -6,10 +6,7 @@ File: js
 */
 
 
-//exportar las funciones de java script para importarlo en un ocmponente de angular 
-export const miau = () => {
-    console.log("gatito")
-}
+
 
 //Para que no halla problemas al refireccionar a un componente, en una funcion que ejecuta automaticamente al cargarse
 export const customInitFunctions= () => {
@@ -90,23 +87,23 @@ export const customInitFunctions= () => {
             $(this).parents('.form-group').toggleClass('focused', (e.type === 'focus' || this.value.length > 0));
         }).trigger('blur');
     
-        // ============================================================== 
-        // Auto select left navbar
-        // ============================================================== 
-        $(function() {
-            var url = window.location;
-            var element = $('ul#sidebarnav a').filter(function() {
-                return this.href == url;
-            }).addClass('active').parent().addClass('active');
-            while (true) {
-                if (element.is('li')) {
-                    element = element.parent().addClass('in').parent().addClass('active');
-                } else {
-                    break;
-                }
-            }
+        // // ============================================================== 
+        // // Auto select left navbar, da problema de la recarga de la pagina 
+        // // ============================================================== 
+        // $(function() {
+        //     var url = window.location;
+        //     var element = $('ul#sidebarnav a').filter(function() {
+        //         return this.href == url;
+        //     }).addClass('active').parent().addClass('active');
+        //     while (true) {
+        //         if (element.is('li')) {
+        //             element = element.parent().addClass('in').parent().addClass('active');
+        //         } else {
+        //             break;
+        //         }
+        //     }
     
-        });
+        // });
         // ============================================================== 
         //tooltip
         // ============================================================== 
@@ -169,4 +166,3 @@ export const customInitFunctions= () => {
 }
 
 customInitFunctions();
-miau();
