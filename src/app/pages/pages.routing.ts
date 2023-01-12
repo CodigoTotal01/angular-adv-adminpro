@@ -5,6 +5,8 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ProgressComponent} from "./progress/progress.component";
 import {Grafica1Component} from "./grafica1/grafica1.component";
 import { AcountSettingsComponent } from './acount-settings/acount-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 const routes : Routes = [
   {
@@ -15,19 +17,47 @@ const routes : Routes = [
       //protegidas
       {
         path: '',  //? Ruta por defecto
-        component: DashboardComponent
+        component: DashboardComponent, //data - objeto donde podemosenviar lo que queramos 
+        data: {
+          titulo: "Dashboard"
+        }
       },
       {
         path: 'progress',
-        component: ProgressComponent
+        component: ProgressComponent,
+        data: {
+          titulo: "ProgressBar"
+        }
       },
       {
         path: 'account-settings',
-        component: AcountSettingsComponent
+        component: AcountSettingsComponent,
+        data: {
+          titulo: "Ajustes de cuenta"
+        }
       },
       {
         path: 'grafica1',
-        component: Grafica1Component
+        component: Grafica1Component,
+        data: {
+          titulo: "Grafica 1"
+        }
+      }
+      ,
+      {
+        path: 'promesas',
+        component: PromesasComponent,
+        data: {
+          titulo: "Promesas"
+        }
+      }
+      ,
+      {
+        path: 'rxjs',
+        component: RxjsComponent,
+        data: {
+          titulo: "RxJS"
+        }
       }
     ]
   }

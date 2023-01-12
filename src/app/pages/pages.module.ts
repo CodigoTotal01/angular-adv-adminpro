@@ -18,6 +18,8 @@ import {Grafica1Component} from "./grafica1/grafica1.component";
 import {PagesComponent} from "./pages.component";
 import {SharedModule} from "../shared/shared.module";
 import { AcountSettingsComponent } from './acount-settings/acount-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -33,6 +35,8 @@ import { AcountSettingsComponent } from './acount-settings/acount-settings.compo
     Grafica1Component,
     PagesComponent,
     AcountSettingsComponent,
+    PromesasComponent,
+    RxjsComponent,
   ],
   imports: [
     //angular
@@ -51,6 +55,7 @@ import { AcountSettingsComponent } from './acount-settings/acount-settings.compo
     Grafica1Component,
     PagesComponent,
     AcountSettingsComponent,
+    PromesasComponent,
   ]
 })
 export class PagesModule { }
