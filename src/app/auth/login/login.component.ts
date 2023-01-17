@@ -42,27 +42,12 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
 
   googleInit(){
-    google.accounts.id.initialize({
-      client_id: "404287457797-vth9au1flpgdr5uq85nn3tk958usai4o.apps.googleusercontent.com",
-      callback: (response:any) => this.handleCredentialResponse(response)
-    });
     google.accounts.id.renderButton(
       this.googleBtn?.nativeElement,
       {theme: "outline", size: "large"}  // customization attributes
     );
   }
 
-  handleCredentialResponse(response: any){
-
-    //obtenemos el token de la base de datos
-    console.log("Encoded JWT ID token: " + response.credential);
-    this.usuarioService.loginGoogle( response.credential).subscribe(
-      resp => {
-        this.router.navigateByUrl('/');
-      }
-    )
-
-  }
 
   login(){
 
