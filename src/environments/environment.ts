@@ -2,8 +2,12 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+//variables de desarrollo solo para programadores
+
+
 export const environment = {
-  production: false
+  production: false,
+  base_url: 'http://localhost:3000/api', //base de url para hacer las peticiones a mis servicios
 };
 
 /*
