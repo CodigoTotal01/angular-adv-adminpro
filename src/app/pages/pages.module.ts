@@ -2,7 +2,7 @@
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterOutlet} from "@angular/router";
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ComponentsModule } from '../components/components.module';
 
 
@@ -20,6 +20,7 @@ import {SharedModule} from "../shared/shared.module";
 import { AcountSettingsComponent } from './acount-settings/acount-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 
@@ -37,6 +38,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     AcountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
+    PerfilComponent,
   ],
   imports: [
     //angular
@@ -46,6 +48,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     SharedModule,   //? Modulo personalizado
     RouterOutlet, //Modulo router
     ComponentsModule,
+    ReactiveFormsModule // para los formularios reactivos y el builder
 
 
    ],

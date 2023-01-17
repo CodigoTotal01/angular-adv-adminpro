@@ -8,6 +8,7 @@ import { AcountSettingsComponent } from './acount-settings/acount-settings.compo
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import {AuthGuard} from "../guards/auth.guard";
+import {PerfilComponent} from "./perfil/perfil.component";
 
 const routes : Routes = [
   {
@@ -59,6 +60,14 @@ const routes : Routes = [
         component: RxjsComponent,
         data: {
           titulo: "RxJS"
+        }
+      }
+      ,
+      {
+        path: 'perfil',
+        component: PerfilComponent,
+        data: {
+          titulo: "Perfil de usuario"
         }
       }
     ]
