@@ -7,17 +7,19 @@ import {Grafica1Component} from "./grafica1/grafica1.component";
 import { AcountSettingsComponent } from './acount-settings/acount-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import {AuthGuard} from "../guards/auth.guard";
 
 const routes : Routes = [
   {
     path: 'dashboard',
     component: PagesComponent,
+    canActivate: [AuthGuard],
     //definiendo rutas hijas
     children: [ // se cargaran elen el router outlet de pages component
       //protegidas
       {
         path: '',  //? Ruta por defecto
-        component: DashboardComponent, //data - objeto donde podemosenviar lo que queramos 
+        component: DashboardComponent, //data - objeto donde podemosenviar lo que queramos
         data: {
           titulo: "Dashboard"
         }

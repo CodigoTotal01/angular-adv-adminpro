@@ -4,8 +4,9 @@ import {RegisterForm} from "../interfaces/register-form.interface";
 import {environment} from "../../environments/environment";
 import {LoginForm} from "../interfaces/login-form.interface";
 
-import {tap} from "rxjs/operators";
+import {tap, map, catchError} from "rxjs/operators";
 import {Router} from "@angular/router";
+import {Observable, of} from "rxjs";
 
 
 //HTTP client -> base a observables
@@ -22,6 +23,23 @@ declare const google: any;
 export class UsuarioService {
   // inyectar servicio
   constructor(private http: HttpClient, private router: Router) {
+  }
+
+
+  validarToken(): Observable<boolean> {
+    const token = localStorage.getItem('token') || '';
+    //ruta - headers
+    return this.http.get(`${base_url}/login/renew`, {
+      headers: {
+        'x-token': token
+      }
+    }).pipe(
+      tap((resp: any) => {
+      localStorage.setItem('token', resp.token)
+    }),
+      map(resp => true),
+      catchError(error=> of(false))
+    )
   }
 
   crearUsuario(formData: RegisterForm) {
