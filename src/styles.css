@@ -9,4 +9,16 @@
 #themecolors .selector .cursor{
   cursor: pointer;
 }
+.img-avatar{
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+}
 
+.img-center{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
