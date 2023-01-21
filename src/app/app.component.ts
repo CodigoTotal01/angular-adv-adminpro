@@ -15,6 +15,7 @@ export class AppComponent implements AfterViewInit{
   constructor(private router: Router, private fb : FormBuilder, private usuarioService: UsuarioService, private ngZone:NgZone) {}
 
   ngAfterViewInit():void {
+
     this.googleInit();
   }
 
@@ -22,7 +23,7 @@ export class AppComponent implements AfterViewInit{
   googleInit(){
     google.accounts.id.initialize({
       client_id: "404287457797-vth9au1flpgdr5uq85nn3tk958usai4o.apps.googleusercontent.com",
-      callback: (response:any) => this.handleCredentialResponse(response)
+      callback: (response:any) => {return this.handleCredentialResponse(response)}
     });
   }
 

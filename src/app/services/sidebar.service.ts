@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SidebarService {
-//opciones del menu del sashboard 
+//opciones del menu del sashboard
   menu: any[] =[
     {
       titulo: "Dashboard",
@@ -27,6 +27,21 @@ export class SidebarService {
           titulo: "RxJs", url: "rxjs"
         },
       ]
+    },
+    {
+      titulo: "Mantenimientos",
+      icono: "mdi mdi-folder-lock-open",
+      submenu:[
+        {
+          titulo: "usuarios", url: "usuarios"
+        },
+        {
+          titulo: "Hospitales", url: "hospitales"
+        },
+        {
+          titulo: "Medicos", url: "medicos"
+        }
+        ]
     }
   ]
   constructor() { }
