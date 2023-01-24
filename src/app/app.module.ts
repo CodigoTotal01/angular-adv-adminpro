@@ -15,6 +15,7 @@ import {NopagefoundComponent} from "./nopagefound/nopagefound.component";
     //! Si no se declaran, dara errores cuando se intenten usar dentro de otros modulos, porque no existen
     AppComponent,
     NopagefoundComponent,
+
   ],
   imports: [ //modulos
     BrowserModule,

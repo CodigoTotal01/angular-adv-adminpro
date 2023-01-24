@@ -2,7 +2,9 @@ import {AfterViewInit, Component, NgZone} from '@angular/core';
 import {Router} from "@angular/router";
 import {FormBuilder, Validators} from "@angular/forms";
 import {UsuarioService} from "./services/usuario.service";
-declare const google: any; // cuando deu n paquete de terceros no tenemos referencia
+
+declare const google: '' | any; // cuando deu n paquete de terceros no tenemos referencia
+
 
 @Component({
   selector: 'app-root',

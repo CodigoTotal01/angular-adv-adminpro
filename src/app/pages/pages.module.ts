@@ -1,7 +1,7 @@
 //modulos de angular
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterOutlet} from "@angular/router";
+import {RouterLink, RouterLinkWithHref, RouterOutlet} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ComponentsModule } from '../components/components.module';
 
@@ -22,6 +22,11 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
+import {PipeModule} from "../pipes/imagen.module";
+import { MedicoComponent } from './mantenimientos/medicos/medico.component';
+import {AppRoutingModule} from "../app-routing.module";
 
 
 
@@ -41,6 +46,9 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
     RxjsComponent,
     PerfilComponent,
     UsuariosComponent,
+    HospitalesComponent,
+    MedicosComponent,
+    MedicoComponent,
   ],
   imports: [
     //angular
@@ -50,10 +58,11 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
     SharedModule,   //? Modulo personalizado
     RouterOutlet, //Modulo router
     ComponentsModule,
-    ReactiveFormsModule // para los formularios reactivos y el builder
+    ReactiveFormsModule,// para los formularios reactivos y el builder
+    PipeModule,
+    AppRoutingModule
 
-
-   ],
+  ],
   exports: [ //para que los components se usen en otros lados
     DashboardComponent,
     ProgressComponent,

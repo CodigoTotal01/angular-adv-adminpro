@@ -11,6 +11,9 @@ import {AuthGuard} from "../guards/auth.guard";
 import {PerfilComponent} from "./perfil/perfil.component";
 import {Usuario} from "../models/usuario.model";
 import {UsuariosComponent} from "./mantenimientos/usuarios/usuarios.component";
+import {MedicosComponent} from "./mantenimientos/medicos/medicos.component";
+import {HospitalesComponent} from "./mantenimientos/hospitales/hospitales.component";
+import {MedicoComponent} from "./mantenimientos/medicos/medico.component";
 
 const routes : Routes = [
   {
@@ -78,6 +81,27 @@ const routes : Routes = [
         component: UsuariosComponent,
         data: {
           titulo: "Usuario de Aplicacion"
+        }
+      },
+      {
+        path: 'hospitales',
+        component: HospitalesComponent,
+        data: {
+          titulo: "Hospitales aplicacion"
+        }
+      },
+      {
+        path: 'medicos',
+        component: MedicosComponent,
+        data: {
+          titulo: "Medicos aplicacion"
+        }
+      },
+      {
+        path: 'medico/:id',
+        component: MedicoComponent,
+        data: {
+          titulo: "Medicos aplicacion"
         }
       },
     ]
