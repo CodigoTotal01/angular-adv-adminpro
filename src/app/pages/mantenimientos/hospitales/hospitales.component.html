@@ -1,0 +1,77 @@
+<!--Bar-->
+<div class="row animated fadeIn fast">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <!--input buscar -->
+        <input (keyup)="buscarHospital(txtTermino.value)"  #txtTermino  type="text" class="form-control" placeholder="Buscar Hospital...">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Loading-->
+<div *ngIf="estaCargando" class="row animated fadeIn fast">
+  <div class="col-12">
+    <div class="alert alert-info text-center">
+      <h4 class="alert-dismissible">Cargando</h4>
+      <i class="fa fa-spin fa-refresh fa-2x"></i>
+      <p class="mb-0">Porfavor espere un poco ...</p>
+    </div>
+  </div>
+</div>
+
+
+<!--Tabla -->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+
+      <div class="card-body">
+
+
+        <div class="text-right">
+          <button (click)="abrirSweetAlert()" class="btn btn-primary">
+            <i class="fa fa-hospital-o"></i>
+            Crear Hospital
+          </button>
+        </div>
+
+        <h4 class="card-title">Hospitales ({{hospitales.length}})</h4>
+        <h6 class="card-subtitle">Hospitales Registrados en la aplicación</h6>
+        <!--        Tabla en si-->
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th class="w100">Foto</th>
+              <th>Nombre</th>
+              <th class="text-nowrap w100">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let hospital of hospitales">
+              <td class="img-center">
+                <img class="w100 avatar cursor" (click)="abrirModal(hospital)"
+                     [src]="hospital.img! | imagen:'hospitales'" [alt]="hospital.nombre">
+              </td>
+              <td>
+                <input type="text" class="form-control" placeholder="Nombre del hospital" [(ngModel)]="hospital.nombre">
+              </td>
+              <!--acciones-->
+              <td class="text-nowrap text-center">
+                <a (click)="guadarCambios(hospital)" class="cursor" data-toggle="tooltip"
+                   data-original-title="Guardar Cambio"> <i
+                  class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                <a (click)="eliminarHospital(hospital)" class="cursor" data-toggle="tooltip"
+                   data-original-title="Borrar"> <i class="fa fa-close text-danger"></i>
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
