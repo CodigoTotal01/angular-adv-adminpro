@@ -27,6 +27,7 @@ import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import {PipeModule} from "../pipes/imagen.module";
 import { MedicoComponent } from './mantenimientos/medicos/medico.component';
 import {AppRoutingModule} from "../app-routing.module";
+import { BusquedasComponent } from './busquedas/busquedas.component';
 
 
 
@@ -49,6 +50,7 @@ import {AppRoutingModule} from "../app-routing.module";
     HospitalesComponent,
     MedicosComponent,
     MedicoComponent,
+    BusquedasComponent,
   ],
   imports: [
     //angular

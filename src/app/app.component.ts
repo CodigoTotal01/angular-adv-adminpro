@@ -30,9 +30,6 @@ export class AppComponent implements AfterViewInit{
   }
 
   handleCredentialResponse(response: any){
-
-    //obtenemos el token de la base de datos
-    console.log("Encoded JWT ID token: " + response.credential);
     this.usuarioService.loginGoogle( response.credential).subscribe(
       resp => {
         this.ngZone.run(() => {
@@ -40,7 +37,6 @@ export class AppComponent implements AfterViewInit{
         })
       }
     )
-
   }
 
 }
