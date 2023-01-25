@@ -37,6 +37,8 @@ yarn-error.log
 testem.log
 /typings
 
+
+public/assets/plugins/jtable/extensions/jquery.jtable.aspnetpagemethods.min.js
 # System files
 .DS_Store
 Thumbs.db
